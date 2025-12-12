@@ -36,21 +36,28 @@ export function NotificationProvider({ children, userId }: { children: ReactNode
 
   const loadNotifications = useCallback(async () => {
     try {
+      console.log('🔄 Loading notifications...');
       const response = await notificationAPI.getMyNotifications();
+      console.log('📥 Notifications response:', response);
       if (response.success && response.data) {
         // Transform and deduplicate notifications
         const transformed = response.data.notifications.map(transformNotification);
+        console.log('✅ Loaded notifications:', transformed.length);
         setNotifications(transformed);
       }
     } catch (error) {
-      console.error('Failed to load notifications:', error);
+      console.error('❌ Failed to load notifications:', error);
     }
   }, []);
 
   useEffect(() => {
+    console.log('🔌 Initializing NotificationProvider for userId:', userId);
+    
     // Connect Socket.IO
     connectSocket(userId);
     const socket = getSocket();
+    
+    console.log('🔗 Socket status:', socket.connected ? 'Connected' : 'Connecting...');
 
     // Load initial notifications
     loadNotifications();

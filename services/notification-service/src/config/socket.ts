@@ -8,7 +8,7 @@ export let io: SocketIOServer;
 export const initializeSocketIO = (server: HTTPServer) => {
   io = new SocketIOServer(server, {
     cors: {
-      origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+      origin: [process.env.FRONTEND_URL || 'http://localhost:3010', 'http://localhost:3000', 'http://localhost:3010'],
       credentials: true,
       methods: ['GET', 'POST']
     }
@@ -17,6 +17,15 @@ export const initializeSocketIO = (server: HTTPServer) => {
   // Authentication middleware for Socket.IO
   io.use((socket, next) => {
     try {
+      // Try to get userId from auth (passed from frontend)
+      const userId = socket.handshake.auth.userId;
+      
+      if (userId) {
+        socket.data.user = { userId };
+        return next();
+      }
+
+      // Fallback: Try to get token from cookies
       const token = socket.handshake.auth.token || socket.handshake.headers.cookie?.split('accessToken=')[1]?.split(';')[0];
       
       if (!token) {

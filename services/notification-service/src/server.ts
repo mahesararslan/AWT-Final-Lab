@@ -19,8 +19,7 @@ app.use(cors({
   origin: [
     process.env.FRONTEND_URL || 'http://localhost:3010',
     'http://localhost:3000',
-    'http://localhost:3010',
-    process.env.AUTH_SERVICE_URL || 'http://localhost:3001'
+    'http://localhost:3010'
   ],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],

@@ -25,6 +25,18 @@ export const connectSocket = (userId: string) => {
   if (!socketInstance.connected) {
     socketInstance.auth = { userId };
     socketInstance.connect();
+    
+    socketInstance.on('connect', () => {
+      console.log('✅ Socket connected successfully');
+    });
+    
+    socketInstance.on('connect_error', (error) => {
+      console.error('❌ Socket connection error:', error);
+    });
+    
+    socketInstance.on('disconnect', (reason) => {
+      console.log('🔌 Socket disconnected:', reason);
+    });
   }
 };
 

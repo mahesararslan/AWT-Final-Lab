@@ -130,12 +130,14 @@ export const startKafkaConsumer = async () => {
 
 // Event handlers
 const handleAppointmentCreated = async (event: any) => {
+  console.log('📥 Processing APPOINTMENT_CREATED event:', event);
   const dateStr = formatDate(event.date);
   const timeStr = formatTime(event.time);
   const doctorName = event.doctorName || 'your doctor';
   const patientName = event.patientName || 'a patient';
 
   // Notify patient
+  console.log(`📧 Creating notification for patient: ${event.patientId}`);
   await createNotification(
     event.patientId,
     'Appointment Created',
@@ -145,6 +147,7 @@ const handleAppointmentCreated = async (event: any) => {
   );
 
   // Notify doctor
+  console.log(`📧 Creating notification for doctor: ${event.doctorId}`);
   await createNotification(
     event.doctorId,
     'New Appointment Request',

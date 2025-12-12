@@ -134,9 +134,9 @@ export default function AdminAppointmentsPage() {
                   <button
                     key={status}
                     onClick={() => setFilter(status)}
-                    className={`px-4 py-2 rounded-md text-sm font-medium ${
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                       filter === status
-                        ? 'bg-indigo-600 text-white'
+                        ? 'bg-gradient-to-r from-teal-600 to-cyan-600 text-white shadow-md'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                     }`}
                   >
@@ -149,7 +149,7 @@ export default function AdminAppointmentsPage() {
                 placeholder="Search appointments..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                className="px-4 py-2 text-gray-900 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent placeholder-gray-400"
               />
             </div>
           </div>
@@ -212,7 +212,7 @@ export default function AdminAppointmentsPage() {
                             <p className="text-sm font-medium text-gray-900 mb-1">👨‍⚕️ Doctor</p>
                             <p className="text-sm text-gray-600">Dr. {(appointment as any).doctorName || appointment.doctorEmail || 'Unknown'}</p>
                             {((appointment as any).doctorSpecialization || appointment.doctorSpecialization) && (
-                              <p className="text-xs text-indigo-600">{(appointment as any).doctorSpecialization || appointment.doctorSpecialization}</p>
+                              <p className="text-xs text-teal-600">{(appointment as any).doctorSpecialization || appointment.doctorSpecialization}</p>
                             )}
                           </div>
                         </div>

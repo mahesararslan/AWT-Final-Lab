@@ -155,7 +155,7 @@ export default function BookAppointmentPage() {
                   required
                   value={formData.doctorId}
                   onChange={(e) => setFormData({ ...formData, doctorId: e.target.value })}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                  className="mt-1 block w-full px-4 py-3 text-gray-900 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
                 >
                   <option value="">Choose a doctor</option>
                   {doctors.map((doctor: any) => (
@@ -177,7 +177,7 @@ export default function BookAppointmentPage() {
                   min={new Date().toISOString().split('T')[0]}
                   value={formData.appointmentDate}
                   onChange={(e) => setFormData({ ...formData, appointmentDate: e.target.value })}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                  className="mt-1 block w-full px-4 py-3 text-gray-900 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
                 />
               </div>
 
@@ -190,7 +190,7 @@ export default function BookAppointmentPage() {
                   required
                   value={formData.appointmentTime}
                   onChange={(e) => setFormData({ ...formData, appointmentTime: e.target.value })}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                  className="mt-1 block w-full px-4 py-3 text-gray-900 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
                 >
                   <option value="">Choose a time</option>
                   <option value="09:00">09:00 AM</option>
@@ -221,7 +221,7 @@ export default function BookAppointmentPage() {
                   minLength={10}
                   value={formData.reason}
                   onChange={(e) => setFormData({ ...formData, reason: e.target.value })}
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                  className="mt-1 block w-full px-4 py-3 text-gray-900 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent placeholder-gray-400"
                   placeholder="Describe your symptoms or reason for consultation (at least 10 characters)"
                 />
                 <p className="mt-1 text-xs text-gray-400">
@@ -233,14 +233,14 @@ export default function BookAppointmentPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="flex-1 py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="flex-1 py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-gradient-to-r from-teal-600 to-cyan-600 hover:from-teal-700 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                 >
                   {loading ? 'Booking...' : 'Book Appointment'}
                 </button>
                 <button
                   type="button"
                   onClick={() => router.push('/patient/dashboard')}
-                  className="px-6 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 hover:bg-gray-50"
+                  className="px-6 py-3 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition-colors"
                 >
                   Cancel
                 </button>
@@ -286,7 +286,7 @@ export default function BookAppointmentPage() {
                   handleConfirmBooking();
                 }}
                 disabled={loading}
-                className="px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 disabled:opacity-50"
+                className="px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-teal-600 to-cyan-600 rounded-lg hover:from-teal-700 hover:to-cyan-700 disabled:opacity-50 transition-all"
               >
                 {loading ? 'Booking...' : 'Confirm Booking'}
               </button>
@@ -307,7 +307,7 @@ export default function BookAppointmentPage() {
             </p>
             <button
               onClick={() => router.push('/patient/appointments')}
-              className="w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 rounded-lg hover:bg-indigo-700"
+              className="w-full px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-teal-600 to-cyan-600 rounded-lg hover:from-teal-700 hover:to-cyan-700 transition-all"
             >
               View My Appointments
             </button>

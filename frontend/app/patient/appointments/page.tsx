@@ -118,7 +118,7 @@ export default function PatientAppointmentsPage() {
             </div>
             <button
               onClick={() => router.push('/patient/book-appointment')}
-              className="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
+              className="px-6 py-3 bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-lg hover:from-teal-700 hover:to-cyan-700 transition-all shadow-md"
             >
               Book New Appointment
             </button>
@@ -131,9 +131,9 @@ export default function PatientAppointmentsPage() {
                 <button
                   key={status}
                   onClick={() => setFilter(status)}
-                  className={`px-4 py-2 rounded-md text-sm font-medium ${
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                     filter === status
-                      ? 'bg-indigo-600 text-white'
+                      ? 'bg-gradient-to-r from-teal-600 to-cyan-600 text-white shadow-md'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
@@ -165,7 +165,7 @@ export default function PatientAppointmentsPage() {
                           {getCancellationContext(appointment)}
                         </div>
                         {((appointment as any).doctorSpecialization || appointment.doctorSpecialization) && (
-                          <p className="text-sm text-indigo-600 mb-3">{(appointment as any).doctorSpecialization || appointment.doctorSpecialization}</p>
+                          <p className="text-sm text-teal-600 mb-3">{(appointment as any).doctorSpecialization || appointment.doctorSpecialization}</p>
                         )}
                         <div className="space-y-2">
                           <p className="text-sm text-gray-600">

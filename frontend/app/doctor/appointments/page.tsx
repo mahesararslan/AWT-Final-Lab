@@ -154,9 +154,9 @@ export default function DoctorAppointmentsPage() {
                 <button
                   key={status}
                   onClick={() => setFilter(status)}
-                  className={`px-4 py-2 rounded-md text-sm font-medium ${
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                     filter === status
-                      ? 'bg-indigo-600 text-white'
+                      ? 'bg-gradient-to-r from-teal-600 to-cyan-600 text-white shadow-md'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >

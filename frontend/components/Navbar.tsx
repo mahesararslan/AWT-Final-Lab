@@ -46,13 +46,13 @@ export default function Navbar({ userEmail, userRole }: NavbarProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center">
-            <span className="text-2xl font-bold text-indigo-600">Healthcare</span>
+            <span className="text-2xl font-bold bg-gradient-to-r from-teal-600 to-cyan-600 bg-clip-text text-transparent">Healthcare</span>
             <div className="hidden md:ml-10 md:flex md:space-x-8">
               {getDashboardLinks().map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-gray-700 hover:text-indigo-600 px-3 py-2 rounded-md text-sm font-medium"
+                  className="text-gray-700 hover:text-teal-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
                 >
                   {link.name}
                 </a>

@@ -159,13 +159,13 @@ export default function PatientDashboard() {
             <div className="flex space-x-4">
               <button
                 onClick={() => router.push('/patient/book-appointment')}
-                className="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
+                className="px-6 py-3 bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-lg hover:from-teal-700 hover:to-cyan-700 transition-all shadow-md"
               >
                 Book New Appointment
               </button>
               <button
                 onClick={() => router.push('/patient/appointments')}
-                className="px-6 py-3 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300"
+                className="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
               >
                 View All Appointments
               </button>

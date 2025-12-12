@@ -95,9 +95,9 @@ export default function AdminUsersPage() {
                   <button
                     key={role}
                     onClick={() => setFilter(role)}
-                    className={`px-4 py-2 rounded-md text-sm font-medium ${
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                       filter === role
-                        ? 'bg-indigo-600 text-white'
+                        ? 'bg-gradient-to-r from-teal-600 to-cyan-600 text-white shadow-md'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                     }`}
                   >
@@ -110,7 +110,7 @@ export default function AdminUsersPage() {
                 placeholder="Search users..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                className="px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
+                className="px-4 py-2 text-gray-900 bg-white border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent placeholder-gray-400"
               />
             </div>
           </div>
@@ -172,8 +172,8 @@ export default function AdminUsersPage() {
                     <tr key={usr.id} className="hover:bg-gray-50">
                       <td className="px-6 py-4 whitespace-nowrap">
                         <div className="flex items-center">
-                          <div className="flex-shrink-0 h-10 w-10 bg-indigo-100 rounded-full flex items-center justify-center">
-                            <span className="text-indigo-600 font-medium">
+                          <div className="flex-shrink-0 h-10 w-10 bg-gradient-to-br from-teal-100 to-cyan-100 rounded-full flex items-center justify-center">
+                            <span className="text-teal-600 font-medium">
                               {usr.email.charAt(0).toUpperCase()}
                             </span>
                           </div>

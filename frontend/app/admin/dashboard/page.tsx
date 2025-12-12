@@ -98,7 +98,7 @@ export default function AdminDashboard() {
             </div>
             <div className="bg-white rounded-lg shadow p-6">
               <h3 className="text-sm font-medium text-gray-500">Total Appointments</h3>
-              <p className="text-3xl font-bold text-indigo-600 mt-2">{stats.totalAppointments}</p>
+              <p className="text-3xl font-bold text-teal-600 mt-2">{stats.totalAppointments}</p>
             </div>
           </div>
 
@@ -108,13 +108,13 @@ export default function AdminDashboard() {
             <div className="flex space-x-4">
               <button
                 onClick={() => router.push('/admin/users')}
-                className="px-6 py-3 bg-indigo-600 text-white rounded-md hover:bg-indigo-700"
+                className="px-6 py-3 bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-lg hover:from-teal-700 hover:to-cyan-700 transition-all shadow-md"
               >
                 Manage Users
               </button>
               <button
                 onClick={() => router.push('/admin/appointments')}
-                className="px-6 py-3 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300"
+                className="px-6 py-3 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors"
               >
                 View All Appointments
               </button>
@@ -136,7 +136,7 @@ export default function AdminDashboard() {
                         <p className="text-sm font-medium text-gray-900">{usr.email}</p>
                         <p className="text-xs text-gray-500">{usr.role}</p>
                         {usr.specialization && (
-                          <p className="text-xs text-indigo-600">{usr.specialization}</p>
+                          <p className="text-xs text-teal-600">{usr.specialization}</p>
                         )}
                       </div>
                       <span className="text-xs text-gray-400">
